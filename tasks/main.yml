@@ -17,9 +17,9 @@
     mode=0644
 
 - name: install plugins
-  command: /usr/share/elasticsearch/bin/plugin install {{item}}
-  with_items:
-    - cloud-aws
+  command: /usr/share/elasticsearch/bin/plugin install cloud-aws
+  args:
+    creates: /usr/share/elasticsearch/plugins/cloud-aws
     
 - name: starting up elasticsearch
   service: name=elasticsearch state=started
