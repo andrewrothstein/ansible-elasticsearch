@@ -1,0 +1,9 @@
+---
+- name: (RedHat) downloading rpm...
+  get_url: >-
+    url={{elasticsearch_rpm_url}}
+    dest=/tmp/{{elasticsearch_rpm}}
+
+- name: (RedHat) installing rpm...
+  yum: name=/tmp/{{elasticsearch_rpm}} state=present
+  

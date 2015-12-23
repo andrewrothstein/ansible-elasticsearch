@@ -1,0 +1,9 @@
+---
+- name: (Debian) downloading deb...
+  get_url: >-
+    url={{elasticsearch_deb_url}}
+    dest=/tmp/{{elasticsearch_deb}}
+
+- name: (Debian) installing...
+  apt: deb=/tmp/{{elasticsearch_deb}}
+  

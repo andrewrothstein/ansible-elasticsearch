@@ -1,0 +1,22 @@
+---
+# defaults file for elasticsearch
+elasticsearch_ver : '2.1.1'
+elasticsearch_mirror : 'https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution'
+
+elasticsearch_cluster_name : 'my-application'
+elasticsearch_node_name : 'node-1'
+elasticsearch_node_rack : 'r1'
+
+# Set the bind address to a specific IP (IPv4 or IPv6):
+#elasticsearch_network_host: '192.168.1.1'
+
+# Set a custom port for HTTP:
+#elasticsearch_network_port : 9200
+
+# Peers in the quorum
+#elasticsearch_peers :
+#  - '127.0.0.1'
+#  - '[::1]'
+
+#elasticsearch_quorum : 1
+

@@ -1,0 +1,20 @@
+---
+# tasks file for elasticsearch
+- name: (Debian) install...
+  when: ansible_os_family == 'Debian'
+  include: Debian.yml
+
+- name: (RedHat) install...
+  when: ansible_os_family == 'RedHat'
+  include: RedHat.yml
+
+- name: install /etc/elasticsearch/elasticsearch.yml
+  template:
+    src=etc/elasticsearch/elasticsearch.yml.j2
+    dest=/etc/elasticsearch/elasticsearch.yml
+    owner=root
+    group=root
+    mode=0644
+
+- name: starting up elasticsearch
+  service: name=elasticsearch state=started
