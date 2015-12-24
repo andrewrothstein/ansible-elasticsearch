@@ -14,17 +14,29 @@
 #
 # Use a descriptive name for your cluster:
 #
+{% if elasticsearch_cluster_name is defined %}
 cluster.name: {{elasticsearch_cluster_name}}
+{% else %}
+# cluster.name : my-application
+{% endif %}
 #
 # ------------------------------------ Node ------------------------------------
 #
 # Use a descriptive name for the node:
 #
+{% if elasticsearch_node_name is defined %}
 node.name: {{elasticsearch_node_name}}
+{% else %}
+# node.name: node-1
+{% endif %}
 #
 # Add custom attributes to the node:
 #
+{% if elasticsearch_node_rack is defined %}
 node.rack: {{elasticsearch_node_rack}}
+{% else %}
+# node.rack: r1
+{% endif %}
 #
 # ----------------------------------- Paths ------------------------------------
 #

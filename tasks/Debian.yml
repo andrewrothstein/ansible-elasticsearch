@@ -1,4 +1,10 @@
 ---
+- name: (Debian) deps...
+  apt: name={{item}} state=latest
+  with_items:
+    - openjdk-7-jre
+    - openjdk-7-jdk
+
 - name: (Debian) downloading deb...
   get_url: >-
     url={{elasticsearch_deb_url}}

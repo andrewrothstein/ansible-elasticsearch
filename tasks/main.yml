@@ -22,4 +22,4 @@
     creates: /usr/share/elasticsearch/plugins/cloud-aws
     
 - name: starting up elasticsearch
-  service: name=elasticsearch state=started
+  service: name=elasticsearch state=restarted
