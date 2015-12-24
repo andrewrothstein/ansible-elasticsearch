@@ -13,10 +13,3 @@ elasticsearch_node_rack : 'r1'
 # Set a custom port for HTTP:
 #elasticsearch_network_port : 9200
 
-# Peers in the quorum
-#elasticsearch_peers :
-#  - '127.0.0.1'
-#  - '[::1]'
-
-#elasticsearch_quorum : 1
-
