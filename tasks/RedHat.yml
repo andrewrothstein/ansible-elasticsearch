@@ -1,10 +1,4 @@
 ---
-- name: (RedHat) deps...
-  yum: name={{item}} state=latest
-  with_items:
-    - java-1.7.0-openjdk
-    - java-1.7.0-openjdk-devel
-    
 - name: (RedHat) downloading rpm...
   get_url: >-
     url={{elasticsearch_rpm_url}}
