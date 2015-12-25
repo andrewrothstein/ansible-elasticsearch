@@ -27,7 +27,7 @@ cluster.name: {{elasticsearch_cluster_name}}
 {% if elasticsearch_node_name is defined %}
 node.name: {{elasticsearch_node_name}}
 {% else %}
-# node.name: node-1
+node.name: {{inventory_hostname}}
 {% endif %}
 #
 # Add custom attributes to the node:
@@ -66,7 +66,7 @@ node.rack: {{elasticsearch_node_rack}}
 {% if elasticsearch_network_host is defined %}
 network.host: {{elasticsearch_network_host}}
 {% else %}
-#network.host : 192.168.1.1
+network.host : {{ansible_default_ipv4['address']}}
 {% endif %}
 #
 # Set a custom port for HTTP:

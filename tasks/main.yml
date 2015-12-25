@@ -16,10 +16,15 @@
     group=root
     mode=0644
 
-- name: install plugins
-  command: /usr/share/elasticsearch/bin/plugin {{java_opts}} install --verbose cloud-aws
+- name: install cloud-aws plugin
+  command: /usr/share/elasticsearch/bin/plugin {{java_opts}} install cloud-aws
   args:
     creates: /usr/share/elasticsearch/plugins/cloud-aws
+    
+- name: install mobz/elasticsearch-head plugin
+  command: /usr/share/elasticsearch/bin/plugin {{java_opts}} install mobz/elasticsearch-head
+  args:
+    creates: /usr/share/elasticsearch/plugins/head
     
 - name: starting up elasticsearch
   service: name=elasticsearch state=restarted
