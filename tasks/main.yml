@@ -27,4 +27,4 @@
     creates: /usr/share/elasticsearch/plugins/head
     
 - name: starting up elasticsearch
-  service: name=elasticsearch state=restarted
+  service: name=elasticsearch state=restarted enabled=yes
