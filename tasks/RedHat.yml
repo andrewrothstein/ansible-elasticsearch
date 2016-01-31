@@ -3,7 +3,10 @@
   get_url: >-
     url={{elasticsearch_rpm_url}}
     dest=/tmp/{{elasticsearch_rpm}}
+    owner=root
+    group=root
+    mode=644
 
 - name: (RedHat) installing rpm...
-  yum: name=/tmp/{{elasticsearch_rpm}} state=present
+  package: name=/tmp/{{elasticsearch_rpm}} state=present
   

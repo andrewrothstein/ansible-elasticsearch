@@ -3,6 +3,9 @@
   get_url: >-
     url={{elasticsearch_deb_url}}
     dest=/tmp/{{elasticsearch_deb}}
+    owner=root
+    group=root
+    mode=644
 
 - name: (Debian) installing...
   apt: deb=/tmp/{{elasticsearch_deb}}
