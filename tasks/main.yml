@@ -9,7 +9,7 @@
   include: RedHat.yml
 
 - name: install /etc/elasticsearch/elasticsearch.yml
-  template:
+  template: >-
     src=etc/elasticsearch/elasticsearch.yml.j2
     dest=/etc/elasticsearch/elasticsearch.yml
     owner=root
