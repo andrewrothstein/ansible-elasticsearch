@@ -8,7 +8,8 @@ elasticsearch_mirror : 'https://download.elasticsearch.org/elasticsearch/release
 #elasticsearch_node_rack : 'r1'
 
 # Set the bind address to a specific IP (IPv4 or IPv6):
-#elasticsearch_network_host: '192.168.1.1'
+#elasticsearch_network_bind_host: '0.0.0.0'
+#elasticsearch_network_publish_host: '192.168.1.1'
 
 # Set a custom port for HTTP:
 #elasticsearch_network_port : 9200

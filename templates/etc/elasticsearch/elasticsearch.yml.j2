@@ -63,11 +63,19 @@ node.rack: {{elasticsearch_node_rack}}
 #
 # Set the bind address to a specific IP (IPv4 or IPv6):
 #
-{% if elasticsearch_network_host is defined %}
-network.host: {{elasticsearch_network_host}}
+{% if elasticsearch_network_bind_host is defined %}
+network.bind_host: {{elasticsearch_network_bind_host}}
 {% else %}
-network.host : {{ansible_default_ipv4['address']}}
+# network.bind_host: 0.0.0.0
 {% endif %}
+
+{% if elasticsearch_network_publish_host is defined %}
+network.publish_host : {{elasticsearch_network_publish_host}}
+{% else %}
+network.publish_host : {{ansible_default_ipv4['address']}}
+{% endif %}
+
+
 #
 # Set a custom port for HTTP:
 #
