@@ -105,7 +105,7 @@ http.port: {{elasticsearch_network_port}}
 # The default list of hosts is ["127.0.0.1", "[::1]"]
 #
 {% if groups['elasticsearch'] is defined %}
-discovery.zen.ping.unicast.hosts: {{ groups['elasticsearch']|safe }}
+discovery.zen.ping.unicast.hosts: [{% for host in groups['elasticsearch'] %}"{{hostvars[host]['ansible_default_ipv4']['address']}}"{% if not loop.last %},{% endif %}{% endfor %}]
 {% else %}
 # discovery.zen.ping.unicast.hosts: ['host1', 'host2', 'host2']
 {% endif %}
