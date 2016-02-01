@@ -15,9 +15,8 @@
 # Use a descriptive name for your cluster:
 #
 {% if elasticsearch_cluster_name is defined %}
-cluster.name: {{elasticsearch_cluster_name}}
-{% else %}
-# cluster.name : my-application
+cluster:
+  name: {{elasticsearch_cluster_name}}
 {% endif %}
 #
 # ------------------------------------ Node ------------------------------------
@@ -25,15 +24,18 @@ cluster.name: {{elasticsearch_cluster_name}}
 # Use a descriptive name for the node:
 #
 {% if elasticsearch_node_name is defined %}
-node.name: {{elasticsearch_node_name}}
+node:
+  name: {{elasticsearch_node_name}}
 {% else %}
-node.name: {{inventory_hostname}}
+node:
+  name: {{inventory_hostname}}
 {% endif %}
 #
 # Add custom attributes to the node:
 #
 {% if elasticsearch_node_rack is defined %}
-node.rack: {{elasticsearch_node_rack}}
+node:
+  rack: {{elasticsearch_node_rack}}
 {% else %}
 # node.rack: r1
 {% endif %}
@@ -47,6 +49,10 @@ node.rack: {{elasticsearch_node_rack}}
 # Path to log files:
 #
 # path.logs: /path/to/logs
+path:
+  data: /var/lib/elasticsearch
+  logs: /var/log/elasticsearch
+
 #
 # ----------------------------------- Memory -----------------------------------
 #
@@ -63,24 +69,15 @@ node.rack: {{elasticsearch_node_rack}}
 #
 # Set the bind address to a specific IP (IPv4 or IPv6):
 #
-{% if elasticsearch_network_bind_host is defined %}
-network.bind_host: {{elasticsearch_network_bind_host}}
-{% else %}
-# network.bind_host: 0.0.0.0
-{% endif %}
-
-{% if elasticsearch_network_publish_host is defined %}
-network.publish_host : {{elasticsearch_network_publish_host}}
-{% else %}
-network.publish_host : {{ansible_default_ipv4['address']}}
-{% endif %}
-
+network:
+  host : {{ansible_default_ipv4['address']}}
 
 #
 # Set a custom port for HTTP:
 #
 {% if elasticsearch_network_port is defined %}
-http.port: {{elasticsearch_network_port}}
+http:
+  port: {{elasticsearch_network_port}}
 {% else %}
 # http.port: 9200
 {% endif %}
