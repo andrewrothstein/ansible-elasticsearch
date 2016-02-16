@@ -70,7 +70,7 @@ path:
 # Set the bind address to a specific IP (IPv4 or IPv6):
 #
 network:
-  host : {{ansible_default_ipv4['address']}}
+  host : {{ hostvars[inventory_hostname]['ansible_' + elasticsearch_network_interface]['ipv4']['address'] }}
 
 #
 # Set a custom port for HTTP:

@@ -8,6 +8,6 @@ elasticsearch_mirror : 'https://download.elasticsearch.org/elasticsearch/release
 
 # Set a custom port for HTTP:
 #elasticsearch_network_port : 9200
-elasticsearch_network_interface: default
+elasticsearch_network_interface: eth0
 
 
