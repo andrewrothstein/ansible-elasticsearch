@@ -1,6 +1,6 @@
 ---
 # defaults file for elasticsearch
-elasticsearch_ver : '2.2.0'
+elasticsearch_ver : '2.2.1'
 elasticsearch_mirror : 'https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution'
 
 #elasticsearch_cluster_name : 'my-application'
