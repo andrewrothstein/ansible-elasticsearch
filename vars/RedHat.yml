@@ -1,0 +1,3 @@
+---
+elasticsearch_pkg : 'elasticsearch-{{elasticsearch_ver}}.rpm'
+elasticsearch_pkg_url : '{{elasticsearch_mirror}}/rpm/elasticsearch/{{elasticsearch_ver}}/{{elasticsearch_pkg}}'

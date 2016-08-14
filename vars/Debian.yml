@@ -1,0 +1,3 @@
+---
+elasticsearch_pkg : 'elasticsearch-{{elasticsearch_ver}}.deb'
+elasticsearch_pkg_url : '{{elasticsearch_mirror}}/deb/elasticsearch/{{elasticsearch_ver}}/{{elasticsearch_pkg}}'
