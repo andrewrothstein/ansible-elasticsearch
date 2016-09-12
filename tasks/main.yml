@@ -26,15 +26,3 @@
   when: ansible_os_family == 'RedHat'
   package: name=/tmp/{{elasticsearch_pkg}} state=present
 
-- name: install /etc/elasticsearch/elasticsearch.yml
-  become: yes
-  become_user: root
-  template: >-
-    src=etc/elasticsearch/elasticsearch.yml.j2
-    dest=/etc/elasticsearch/elasticsearch.yml
-    mode=0644
-
-- name: starting up elasticsearch
-  become: yes
-  become_user: root
-  service: name=elasticsearch state=started enabled=yes
