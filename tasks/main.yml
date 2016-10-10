@@ -26,3 +26,5 @@
   when: ansible_os_family == 'RedHat'
   package: name=/tmp/{{elasticsearch_pkg}} state=present
 
+- name: start elasticsearch
+  service: name=elasticsearch state=started enabled=yes
