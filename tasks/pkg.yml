@@ -1,0 +1,6 @@
+---
+- name: install with brew
+  become: '{{elasticsearch_privilege_escalate|default(False)}}'
+  become_user: root
+  when: ansible_os_family == 'Darwin'
+  package: name=elasticsearch state=present
