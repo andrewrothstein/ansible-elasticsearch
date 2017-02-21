@@ -1,7 +1,7 @@
 ---
-- name: install with brew
+- name: install rpm
   become: '{{elasticsearch_privilege_escalate|default(True)}}'
   become_user: root
   package:
-    name: elasticsearch
+    name: /tmp/{{elasticsearch_pkg}}
     state: present

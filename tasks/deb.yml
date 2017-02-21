@@ -1,7 +1,8 @@
 ---
-- name: install with brew
+- name: install deb
   become: '{{elasticsearch_privilege_escalate|default(True)}}'
   become_user: root
-  package:
-    name: elasticsearch
+  apt:
+    deb: /tmp/{{elasticsearch_pkg}}
     state: present
+    
