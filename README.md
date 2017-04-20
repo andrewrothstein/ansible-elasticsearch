@@ -1,7 +1,8 @@
+[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-elasticsearch.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-elasticsearch)
 andrewrothstein.elasticsearch
 =============================
 
-A role to install [elasticsearch](https://www.elastic.co/)
+Installs [Elasticsearch](https://www.elastic.co/).
 
 Requirements
 ------------

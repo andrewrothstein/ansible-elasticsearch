@@ -1,5 +1,4 @@
 ---
 elasticsearch_installer: dlpkg
 elasticsearch_pkg_mgr: apt
-elasticsearch_pkg : 'elasticsearch-{{elasticsearch_ver}}.deb'
-elasticsearch_pkg_url : '{{elasticsearch_mirror}}/deb/elasticsearch/{{elasticsearch_ver}}/{{elasticsearch_pkg}}'
+elasticsearch_pkg_suffix: deb
