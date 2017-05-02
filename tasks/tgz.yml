@@ -12,6 +12,7 @@
   become: '{{elasticsearch_privilege_escalate|default(True)}}'
   become_user: root
   unarchive:
+    copy: no
     src: /tmp/{{elasticsearch_tgz}}
     dest: '{{elasticsearch_parent_install_dir}}'
     creates: '{{elasticsearch_install_dir}}'
