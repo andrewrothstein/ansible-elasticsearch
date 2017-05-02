@@ -1,6 +1,6 @@
-[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-elasticsearch.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-elasticsearch)
 andrewrothstein.elasticsearch
 =============================
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-elasticsearch.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-elasticsearch)
 
 Installs [Elasticsearch](https://www.elastic.co/).
 
