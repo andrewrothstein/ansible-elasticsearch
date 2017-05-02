@@ -2,5 +2,3 @@
 elasticsearch_installer: dlpkg
 elasticsearch_pkg_mgr: rpm
 elasticsearch_pkg_suffix: rpm
-elasticsearch_pkg : elasticsearch-{{elasticsearch_ver}}.{{elasticsearch_pkg_suffix}}
-elasticsearch_pkg_url : '{{elasticsearch_mirror}}/rpm/elasticsearch/{{elasticsearch_ver}}/{{elasticsearch_pkg}}'
