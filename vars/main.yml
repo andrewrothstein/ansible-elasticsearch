@@ -1,3 +1,5 @@
 ---
 elasticsearch_pkg : elasticsearch-{{elasticsearch_ver}}.{{elasticsearch_pkg_suffix}}
-elasticsearch_pkg_url : '{{elasticsearch_mirror}}/{{elasticsearch_pkg_suffix}}/elasticsearch/{{elasticsearch_ver}}/{{elasticsearch_pkg}}'
+
+# https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.3.2.tar.gz
+elasticsearch_pkg_url : '{{elasticsearch_mirror}}/{{elasticsearch_pkg}}'
