@@ -1,6 +1,6 @@
 ---
 # defaults file for elasticsearch
-elasticsearch_ver : '5.3.0'
+elasticsearch_ver : '5.3.2'
 elasticsearch_mirror : https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution
 
 
