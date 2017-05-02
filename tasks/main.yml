@@ -10,4 +10,4 @@
       paths:
         - '{{role_path}}/vars'
 
-- include: '{{elasticsearch_installer|default("dlpkg")}}.yml'
+- include: '{{elasticsearch_installer|default("tgz")}}.yml'

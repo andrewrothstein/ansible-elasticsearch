@@ -1,0 +1,37 @@
+---
+- name: download...
+  become: '{{elasticsearch_privilege_escalate|default(True)}}'
+  become_user: root
+  get_url:
+    url: '{{elasticsearch_tgz_url}}'
+    dest: /tmp/{{elasticsearch_tgz}}
+    checksum: '{{elasticsearch_checksum}}'
+    mode: 0644
+
+- name: unarchive...
+  become: '{{elasticsearch_privilege_escalate|default(True)}}'
+  become_user: root
+  unarchive:
+    src: /tmp/{{elasticsearch_tgz}}
+    dest: '{{elasticsearch_parent_install_dir}}'
+    creates: '{{elasticsearch_install_dir}}'
+
+- name: link...
+  become: '{{elasticsearch_privilege_escalate|default(True)}}'
+  become_user: root
+  file:
+    src: '{{elasticsearch_install_dir}}'
+    dest: '{{elasticsearch_link_dir}}'
+    state: link
+
+- name: add to search path...
+  become: '{{elasticsearch_privilege_escalate|default(True)}}'
+  become_user: root
+  with_items:
+    - f: elasticsearch.sh
+      d: /etc/profile.d
+  template:
+    src: '{{item.f}}.j2'
+    dest: '{{item.d}}/{{item.f}}'
+    mode: '{{item.m|default("0644")}}'
+    

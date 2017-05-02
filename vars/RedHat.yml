@@ -1,4 +1,0 @@
----
-elasticsearch_installer: dlpkg
-elasticsearch_pkg_mgr: rpm
-elasticsearch_pkg_suffix: rpm

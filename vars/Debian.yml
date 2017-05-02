@@ -1,4 +1,0 @@
----
-elasticsearch_installer: dlpkg
-elasticsearch_pkg_mgr: apt
-elasticsearch_pkg_suffix: deb

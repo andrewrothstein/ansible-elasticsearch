@@ -1,8 +1,0 @@
----
-- name: install deb
-  become: '{{elasticsearch_privilege_escalate|default(True)}}'
-  become_user: root
-  apt:
-    deb: /tmp/{{elasticsearch_pkg}}
-    state: present
-    

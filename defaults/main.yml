@@ -1,7 +1,9 @@
 ---
 # defaults file for elasticsearch
 elasticsearch_ver : '5.3.2'
+elasticsearch_checksum: sha256:a94fe46bc90eb271a0d448d20e49cb02526ac032281c683c79a219240280a1e8
 elasticsearch_mirror : https://artifacts.elastic.co/downloads/elasticsearch
+elasticsearch_parent_install_dir: /usr/local
 
 
 
