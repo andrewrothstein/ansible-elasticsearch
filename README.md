@@ -2,7 +2,7 @@ andrewrothstein.elasticsearch
 =============================
 [![Build Status](https://travis-ci.org/andrewrothstein/ansible-elasticsearch.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-elasticsearch)
 
-Installs [Elasticsearch](https://www.elastic.co/).
+Installs [Elasticsearch](https://www.elastic.co/)
 
 Requirements
 ------------
