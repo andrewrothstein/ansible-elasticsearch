@@ -16,19 +16,25 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
+    - name: Debian
+      versions:
+        - jessie
     - name: MacOSX
       versions:
         - all
-
+    - name: Alpine
+      versions:
+        - all
   galaxy_tags:
     - text
     - index
-    - rest
-
+    - REST
 
 dependencies:
+  - role: andrewrothstein.bash
+    version: v1.0.1
   - role: andrewrothstein.unarchive-deps
     version: v1.0.8
   - role: andrewrothstein.java-oracle-jre
-    version: v1.0.2
+    version: v2.0.0
   
