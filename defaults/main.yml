@@ -7,3 +7,5 @@ elasticsearch_checksum: sha256:e0924ae2af5f4435cef009ad3a567169e9653263e7a3b8693
 
 elasticsearch_mirror : https://artifacts.elastic.co/downloads/elasticsearch
 elasticsearch_parent_install_dir: /usr/local
+
+elasticsearch_cleanup: False

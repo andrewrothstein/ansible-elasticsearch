@@ -35,3 +35,11 @@
     src: '{{item.f}}.j2'
     dest: '{{item.d}}/{{item.f}}'
     mode: '{{item.m|default("0644")}}'
+
+- name: cleanup...
+  become: '{{elasticsearch_privilege_escalate|default(True)}}'
+  become_user: root
+  when: elasticsearch_cleanup
+  file:
+    path: /tmp/{{elasticsearch_tgz}}
+    state: absent
