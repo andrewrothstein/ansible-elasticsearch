@@ -1,21 +1,36 @@
 ---
-- name: download...
-  become: '{{elasticsearch_privilege_escalate|default(True)}}'
-  become_user: root
-  get_url:
-    url: '{{elasticsearch_tgz_url}}'
-    dest: /tmp/{{elasticsearch_tgz}}
-    checksum: '{{elasticsearch_checksum}}'
-    mode: 0644
+- name: check for elasticsearch installation...
+  become: yes
+  stat:
+    path: '{{elasticsearch_install_dir}}'
+  changed_when: false
+  register: elasticsearch_binary_dir
+- when: not elasticsearch_binary_dir.stat.exists
+  block:
+    - name: download...
+      become: '{{elasticsearch_privilege_escalate|default(True)}}'
+      become_user: root
+      get_url:
+        url: '{{elasticsearch_tgz_url}}'
+        dest: /tmp/{{elasticsearch_tgz}}
+        checksum: '{{elasticsearch_checksum}}'
+        mode: 0644
 
-- name: unarchive...
-  become: '{{elasticsearch_privilege_escalate|default(True)}}'
-  become_user: root
-  unarchive:
-    copy: no
-    src: /tmp/{{elasticsearch_tgz}}
-    dest: '{{elasticsearch_parent_install_dir}}'
-    creates: '{{elasticsearch_install_dir}}'
+    - name: unarchive...
+      become: '{{elasticsearch_privilege_escalate|default(True)}}'
+      become_user: root
+      unarchive:
+        copy: no
+        src: /tmp/{{elasticsearch_tgz}}
+        dest: '{{elasticsearch_parent_install_dir}}'
+        creates: '{{elasticsearch_install_dir}}'
+  always:
+    - name: cleanup...
+      become: '{{elasticsearch_privilege_escalate|default(True)}}'
+      become_user: root
+      file:
+        path: /tmp/{{elasticsearch_tgz}}
+        state: absent
 
 - name: link...
   become: '{{elasticsearch_privilege_escalate|default(True)}}'
@@ -36,10 +51,3 @@
     dest: '{{item.d}}/{{item.f}}'
     mode: '{{item.m|default("0644")}}'
 
-- name: cleanup...
-  become: '{{elasticsearch_privilege_escalate|default(True)}}'
-  become_user: root
-  when: elasticsearch_cleanup
-  file:
-    path: /tmp/{{elasticsearch_tgz}}
-    state: absent
