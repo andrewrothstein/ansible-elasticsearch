@@ -2,8 +2,8 @@
 elasticsearch_name: elasticsearch-{{elasticsearch_ver}}
 elasticsearch_tgz : '{{elasticsearch_name}}.tar.gz'
 
-# https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.1.tar.gz
 elasticsearch_tgz_url : '{{elasticsearch_mirror}}/{{elasticsearch_tgz}}'
+elasticsearch_checksum: '{{elasticsearch_checksums[elasticsearch_ver]}}'
 
 elasticsearch_install_dir: '{{elasticsearch_parent_install_dir}}/{{elasticsearch_name}}'
 elasticsearch_link_dir: '{{elasticsearch_parent_install_dir}}/elasticsearch'
