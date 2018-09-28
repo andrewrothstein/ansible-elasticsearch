@@ -1,6 +1,6 @@
 ---
 # defaults file for elasticsearch
-elasticsearch_ver : '6.2.4'
+elasticsearch_ver: '6.4.1'
 
 elasticsearch_checksums:
   '6.0.1': sha256:efaf32aba41e1b7fd086639c0f062c39e1f28b360a78d5c2b8deed797a4c5c57
@@ -20,7 +20,8 @@ elasticsearch_checksums:
   '6.2.3': sha256:01dd8dec5f0acf04336721e404bf4d075675a3acae9f2a9fdcdbb5ca11baca76
   # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.4.tar.gz
   '6.2.4': sha256:91e6f1ea1e1dd39011e7a703d2751ca46ee374665b08b0bfe17e0c0c27000e8e
+  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.1.tar.gz
+  '6.4.1': sha256:6fce529465975b2cd2f5aef09b459006636e4b903e623fd6361ae9feeebf1542
 
-elasticsearch_mirror : https://artifacts.elastic.co/downloads/elasticsearch
+elasticsearch_mirror: https://artifacts.elastic.co/downloads/elasticsearch
 elasticsearch_parent_install_dir: /usr/local
-
