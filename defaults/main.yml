@@ -27,7 +27,7 @@ elasticsearch_checksums:
   # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.3.tar.gz
   '6.4.3': sha256:861bc4d4188ce65df34a8876f104bbb2cddff3586990e57233e0847eb961b15e
   # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.5.1.tar.gz
-  '6.5.1': sha256:17cf2f58c7cbb36c4419a8143321660defe2c492b3a6eaa9a6dcd5e36347d124xs
+  '6.5.1': sha256:17cf2f58c7cbb36c4419a8143321660defe2c492b3a6eaa9a6dcd5e36347d124
 
 elasticsearch_mirror: https://artifacts.elastic.co/downloads/elasticsearch
 elasticsearch_parent_install_dir: /usr/local
