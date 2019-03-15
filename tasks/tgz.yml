@@ -2,51 +2,51 @@
 - name: check for elasticsearch installation...
   become: yes
   stat:
-    path: '{{elasticsearch_install_dir}}'
+    path: '{{ elasticsearch_install_dir }}'
   changed_when: false
   register: elasticsearch_binary_dir
 - when: not elasticsearch_binary_dir.stat.exists
   block:
     - name: download...
-      become: '{{elasticsearch_privilege_escalate|default(True)}}'
+      become: '{{ elasticsearch_privilege_escalate|default(True) }}'
       become_user: root
       get_url:
-        url: '{{elasticsearch_tgz_url}}'
-        dest: /tmp/{{elasticsearch_tgz}}
-        checksum: '{{elasticsearch_checksum}}'
+        url: '{{ elasticsearch_tgz_url }}'
+        dest: /tmp/{{ elasticsearch_tgz }}
+        checksum: '{{ elasticsearch_checksum }}'
         mode: 0644
 
     - name: unarchive...
-      become: '{{elasticsearch_privilege_escalate|default(True)}}'
+      become: '{{ elasticsearch_privilege_escalate|default(True) }}'
       become_user: root
       unarchive:
         copy: no
-        src: /tmp/{{elasticsearch_tgz}}
-        dest: '{{elasticsearch_parent_install_dir}}'
-        creates: '{{elasticsearch_install_dir}}'
+        src: /tmp/{{ elasticsearch_tgz }}
+        dest: '{{ elasticsearch_parent_install_dir }}'
+        creates: '{{ elasticsearch_install_dir }}'
   always:
     - name: cleanup...
-      become: '{{elasticsearch_privilege_escalate|default(True)}}'
+      become: '{{ elasticsearch_privilege_escalate|default(True) }}'
       become_user: root
       file:
-        path: /tmp/{{elasticsearch_tgz}}
+        path: /tmp/{{ elasticsearch_tgz }}
         state: absent
 
 - name: link...
-  become: '{{elasticsearch_privilege_escalate|default(True)}}'
+  become: '{{ elasticsearch_privilege_escalate|default(True) }}'
   become_user: root
   file:
-    src: '{{elasticsearch_install_dir}}'
-    dest: '{{elasticsearch_link_dir}}'
+    src: '{{ elasticsearch_install_dir }}'
+    dest: '{{ elasticsearch_link_dir }}'
     state: link
 
 - name: add to search path...
-  become: '{{elasticsearch_privilege_escalate|default(True)}}'
+  become: '{{ elasticsearch_privilege_escalate|default(True) }}'
   become_user: root
   with_items:
     - f: elasticsearch.sh
       d: /etc/profile.d
   template:
-    src: '{{item.f}}.j2'
-    dest: '{{item.d}}/{{item.f}}'
-    mode: '{{item.m|default("0644")}}'
+    src: '{{ item.f }}.j2'
+    dest: '{{ item.d }}/{{ item.f }}'
+    mode: '{{ item.m|default("0644") }}'

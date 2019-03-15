@@ -1,6 +1,6 @@
 ---
 - name: install with pkg mgr...
-  become: '{{elasticsearch_privilege_escalate|default(True)}}'
+  become: '{{ elasticsearch_privilege_escalate|default(True) }}'
   become_user: root
   package:
     name: elasticsearch
