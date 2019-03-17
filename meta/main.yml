@@ -28,12 +28,12 @@ galaxy_info:
   galaxy_tags:
     - text
     - index
-    - REST
+    - rest
 
 dependencies:
   - role: andrewrothstein.bash
-    version: v1.1.1
+    version: v1.1.2
   - role: andrewrothstein.unarchive-deps
-    version: v1.0.10
+    version: v1.0.11
   - role: andrewrothstein.java-oracle-jre
-    version: v2.1.2
+    version: v2.1.3
