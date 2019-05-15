@@ -1,39 +1,37 @@
----
+dependencies:
+- role: andrewrothstein.bash
+  version: v1.1.2
+- role: andrewrothstein.unarchive-deps
+  version: v1.0.11
+- role: andrewrothstein.openjdk
+  version: v1.0.0
 galaxy_info:
   author: Andrew Rothstein
-  description: elasticsearch role
   company: BlackRock
+  description: elasticsearch role
+  galaxy_tags:
+  - text
+  - index
+  - rest
   license:
-    - MIT
+  - MIT
   min_ansible_version: 2.0
   platforms:
-    - name: EL
-      versions:
-        - all
-    - name: Fedora
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - all
-    - name: Debian
-      versions:
-        - jessie
-    - name: MacOSX
-      versions:
-        - all
-    - name: Alpine
-      versions:
-        - all
-  galaxy_tags:
-    - text
-    - index
-    - rest
-
-dependencies:
-  - role: andrewrothstein.bash
-    version: v1.1.2
-  - role: andrewrothstein.unarchive-deps
-    version: v1.0.11
-  - role: andrewrothstein.java-oracle-jre
-    version: v2.1.3
+  - name: EL
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - jessie
+  - name: MacOSX
+    versions:
+    - all
+  - name: Alpine
+    versions:
+    - all
