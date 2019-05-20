@@ -1,5 +1,5 @@
 ---
-elasticsearch_name: elasticsearch-{{ elasticsearch_ver }}
+elasticsearch_name: elasticsearch-{{ elasticsearch_ver }}-{{ elasticsearch_platform }}
 elasticsearch_tgz: '{{ elasticsearch_name }}.tar.gz'
 
 elasticsearch_tgz_url: '{{ elasticsearch_mirror }}/{{ elasticsearch_tgz }}'
