@@ -1,6 +1,6 @@
 ---
 # defaults file for elasticsearch
-elasticsearch_ver: '7.1.0'
+elasticsearch_ver: '7.1.1'
 elasticsearch_platform: linux-x86_64
 
 elasticsearch_checksums:
@@ -8,6 +8,8 @@ elasticsearch_checksums:
   '7.0.0': sha512:74b2202d933dba5e2081a027f6dd707c6892fc78ecb1de0d068a8c5c5d55b7a3d4ab0be3b5fc62528b36f9639948462da202c4eb7bda77e36c3f96162d1d5356
   # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.0-linux-x86_64.tar.gz.sha512
   '7.1.0': sha512:d2b1535e33b166f99e1c52dd0e39b719065a4c79228454a44aaf77d540f8f17693e7cce38019fba03b3835697e5b6e0f6e6c28ac81c0c1b375ef3d2a5869aabc
+  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.1-linux-x86_64.tar.gz.sha512
+  '7.1.1': sha512:d2bf8eb211e2b4540571158789908a0f5abfca9fb4005b80cfad65d5ce0d65f5b1d64e273da196097a57685226bbfa35fef96fe954737df8872d1620dd40bf4c
 
 elasticsearch_mirror: https://artifacts.elastic.co/downloads/elasticsearch
 elasticsearch_parent_install_dir: /usr/local
