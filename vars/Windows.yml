@@ -1,0 +1,3 @@
+---
+elasticsearch_os: windows
+elasticsearch_archive_type: zip

@@ -1,10 +1,10 @@
 ---
 elasticsearch_platform: '{{ elasticsearch_os}}-{{ elasticsearch_arch }}'
 elasticsearch_name: elasticsearch-{{ elasticsearch_ver }}
-elasticsearch_tgz: '{{ elasticsearch_name }}-{{ elasticsearch_platform }}.tar.gz'
+elasticsearch_archive: '{{ elasticsearch_name }}-{{ elasticsearch_platform }}.{{ elasticsearch_archive_type | default("tar.gz") }}'
 
-elasticsearch_tgz_url: '{{ elasticsearch_mirror }}/{{ elasticsearch_tgz }}'
-elasticsearch_checksum: '{{ elasticsearch_checksums[elasticsearch_ver] }}'
+elasticsearch_archive_url: '{{ elasticsearch_mirror }}/{{ elasticsearch_archive }}'
+elasticsearch_checksum: '{{ elasticsearch_checksums[elasticsearch_ver][elasticsearch_platform] }}'
 
 elasticsearch_install_dir: '{{ elasticsearch_parent_install_dir }}/{{ elasticsearch_name }}'
 elasticsearch_link_dir: '{{ elasticsearch_parent_install_dir }}/elasticsearch'

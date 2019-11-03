@@ -8,19 +8,59 @@ elasticsearch_mirror: https://artifacts.elastic.co/downloads/elasticsearch
 elasticsearch_parent_install_dir: /usr/local
 
 elasticsearch_checksums:
-  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-linux-x86_64.tar.gz.sha512
-  '7.0.0': sha512:74b2202d933dba5e2081a027f6dd707c6892fc78ecb1de0d068a8c5c5d55b7a3d4ab0be3b5fc62528b36f9639948462da202c4eb7bda77e36c3f96162d1d5356
-  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.0-linux-x86_64.tar.gz.sha512
-  '7.1.0': sha512:d2b1535e33b166f99e1c52dd0e39b719065a4c79228454a44aaf77d540f8f17693e7cce38019fba03b3835697e5b6e0f6e6c28ac81c0c1b375ef3d2a5869aabc
-  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.1-linux-x86_64.tar.gz.sha512
-  '7.1.1': sha512:d2bf8eb211e2b4540571158789908a0f5abfca9fb4005b80cfad65d5ce0d65f5b1d64e273da196097a57685226bbfa35fef96fe954737df8872d1620dd40bf4c
-  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.2.0-linux-x86_64.tar.gz.sha512
-  '7.2.0': sha512:9f11386334c9344cb92206c367652ca36cb2161e0a301b1b011c5c168c7c9670e6f59f29521232f1c18388e47e80db0a16fb1daa049c263470cf2f059f3d8a8e
-  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.3.0-linux-x86_64.tar.gz.sha512
-  '7.3.0': sha512:1e45bf29b344f96f4adbfcaa2dba35e46eb1a5e6564f94ed3641835d6ed62fdaee039c627a04b0b6156ff88b885e7257b6e5595b3ecad21021da491e9bdb00a6
-  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.0-linux-x86_64.tar.gz.sha512
-  '7.4.0': sha512:bfd96df61f8b745dce2e665dfe326f021ffdf080853aa02ca7d4bc2f5e40b949fe566fe6aacc628580b8ca421866b86eeb2f694b14b08f47ebb9e1350d18ecc3
-  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.1-linux-x86_64.tar.gz.sha512
-  '7.4.1': sha512:605799480aec3a10a4a88d30633e29e1945f47c3e16f70f27de01291258dc360380c475d64249a46269804a61249f8c35602e523ea2734575a605c9e13db095f
-  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.2-linux-x86_64.tar.gz.sha512
-  '7.4.2': sha512:64cc3e77f4271a5477c8c979fa48728d96890cad68b0daac6566f4dda25b4d4a80784eaafeaa874a6b434c034fcacb8a5751fdb445919191bae4aa4958c793b7
+  '7.0.0':
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-linux-x86_64.tar.gz.sha512
+    'linux-x86_64': sha512:74b2202d933dba5e2081a027f6dd707c6892fc78ecb1de0d068a8c5c5d55b7a3d4ab0be3b5fc62528b36f9639948462da202c4eb7bda77e36c3f96162d1d5356
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-darwin-x86_64.tar.gz.sha512
+    'darwin-x86_64': sha512:057ac935d26582debce49dd197902059653ab81a2b95a19036ed0138a568640e3339ff5bce2b6803d0146096a00f9065d7d96c824055319e70401720ee8d40ce
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-windows-x86_64.zip.sha512
+    'windows-x86_64': sha512:7836ef52b94c6b73bdb3db455a8176a25b77d651e1ba16218ff097e1c869c88f86171d17fe992836c82af2992d9603796fade3b82b63f5f57cdd3d0de5ec1f6b
+  '7.1.0':
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.0-linux-x86_64.tar.gz.sha512
+    'linux-x86_64': sha512:d2b1535e33b166f99e1c52dd0e39b719065a4c79228454a44aaf77d540f8f17693e7cce38019fba03b3835697e5b6e0f6e6c28ac81c0c1b375ef3d2a5869aabc
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.0-darwin-x86_64.tar.gz.sha512
+    'darwin-x86_64': sha512:ec4bf0f29e3e3e212d863d905632d8f984a2faa593029000336f515862ef1eb7ab32c4980d4e6ddac8ab2f0481be636522682e96c6cfdc1635511bac6b2f98e5
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.0-windows-x86_64.zip.sha512
+    'windows-x86_64': sha512:509c4e89a36390760e3c88ec929572041a43c23e9fbbdbdb9c5ceb0a1277d6807a026cc53ac6c80e7a206297ba193bb6d29e49ba02d38144d83d7730297ae1d9
+  '7.1.1':
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.1-linux-x86_64.tar.gz.sha512
+    'linux-x86_64': sha512:d2bf8eb211e2b4540571158789908a0f5abfca9fb4005b80cfad65d5ce0d65f5b1d64e273da196097a57685226bbfa35fef96fe954737df8872d1620dd40bf4c
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.1-darwin-x86_64.tar.gz.sha512
+    'darwin-x86_64': sha512:95c6e59e83a8521e5b06b5218a7302fb6a0aa51fda4627cbedfc827036505e0b866e300e3c2220a166cb3da3c040d75fa6a717bc83f3ac0f1ba03db569de3efc
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.1-windows-x86_64.zip.sha512
+    'windows-x86_64': sha512:1e0730ae2d808c4d41612d9620f0ac320b403d7d89d623729252e7e56eb80f2406e2764e5da8aa03a9116f95262f6abceb3b2d0d3c0873359ebabd507a62a5e2
+  '7.2.0':
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.2.0-linux-x86_64.tar.gz.sha512
+    'linux-x86_64': sha512:9f11386334c9344cb92206c367652ca36cb2161e0a301b1b011c5c168c7c9670e6f59f29521232f1c18388e47e80db0a16fb1daa049c263470cf2f059f3d8a8e
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.2.0-darwin-x86_64.tar.gz.sha512
+    'darwin-x86_64': sha512:94a37576043a2b4f7069cb07f0c989d887fc7c0f999efe967bccff0e47dba04d6252f4dd8fdc5244895d790615a3e67dcb9a024a5564cff023fef605b4ee841a
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.2.0-windows-x86_64.zip.sha512
+    'windows-x86_64': sha512:e5d170c17d393551caa0330535f253ae105e4b24c53cce4f185f1c49c48c84ed0be3750075febb0434f52dc6b26e995027dd64641f4552cb1119388467689d5e
+  '7.3.0':
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.3.0-linux-x86_64.tar.gz.sha512
+    'linux-x86_64': sha512:1e45bf29b344f96f4adbfcaa2dba35e46eb1a5e6564f94ed3641835d6ed62fdaee039c627a04b0b6156ff88b885e7257b6e5595b3ecad21021da491e9bdb00a6
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.3.0-darwin-x86_64.tar.gz.sha512
+    'darwin-x86_64': sha512:bf70f7c68119f3a3c1183dd626ef9be0ba672954efa2a033a2bb7018ffb26ff001c9cf556678e2974ed0a93f60a689b1e76782ce22be558d272950ad75ad5c18
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.3.0-windows-x86_64.zip.sha512
+    'windows-x86_64': sha512:813b11c4dded935c27ec7a693b2be2a73b0ddbf43e390d631516516955654f250da906f20c9ad7e7e27cd86914af2a3208addc8ad096c65c9d1eae97808a6a15
+  '7.4.0':
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.0-linux-x86_64.tar.gz.sha512
+    'linux-x86_64': sha512:bfd96df61f8b745dce2e665dfe326f021ffdf080853aa02ca7d4bc2f5e40b949fe566fe6aacc628580b8ca421866b86eeb2f694b14b08f47ebb9e1350d18ecc3
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.0-darwin-x86_64.tar.gz.sha512
+    'darwin-x86_64': sha512:8e547f1d157f3deef351f5ec2c1d77018638dd923feff5b3f7acd22f4367bc9a0da98e81f454f7a2a8f11af34e085577e90fe87d51fd5e97e6e254acefb14e35
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.0-windows-x86_64.zip.sha512
+    'windows-x86_64': sha512:3d504de4180b1980168b3839f31ffe067ca6eec2e50c3e0917df435d6da764f4efe9730479b524195ebfa799ede0808ce662c6f2ed67f124af8c235ed0134a0a
+  '7.4.1':
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.1-linux-x86_64.tar.gz.sha512
+    'linux-x86_64': sha512:605799480aec3a10a4a88d30633e29e1945f47c3e16f70f27de01291258dc360380c475d64249a46269804a61249f8c35602e523ea2734575a605c9e13db095f
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.1-darwin-x86_64.tar.gz.sha512
+    'darwin-x86_64': sha512:9e7d650c1b48a5d1cfa147f27e0a04f71c37aa9f3ef5fa91c2c642708e6ee7835ce249e9d31bb8db35079a4fbcb92614ac9758d64f8930b2d40a1d753173a1fe
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.1-windows-x86_64.zip.sha512
+    'windows-x86_64': sha512:e32bfe8a160844f15af7cc814929c524f51647dd0d829169fdb61359b1b62f4723ed0aeabbaccd633d95138b4f2b26489842e04bede9cf79b04d362d8759df07
+  '7.4.2':
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.2-linux-x86_64.tar.gz.sha512
+    'linux-x86_64': sha512:64cc3e77f4271a5477c8c979fa48728d96890cad68b0daac6566f4dda25b4d4a80784eaafeaa874a6b434c034fcacb8a5751fdb445919191bae4aa4958c793b7
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.2-darwin-x86_64.tar.gz.sha512
+    'darwin-x86_64': sha512:1e6a707190c274f76f0ebe05400c39a2b923cc1a261ab2e97b3ffe825ad6a73282a31d98284336e4b4f633cc400af47ac8dfad814d636abd497589c8853ec951
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.2-windows-x86_64.zip.sha512
+    'windows-x86_64': sha512:1a5b98f4e2045f6353d1d18360a017d8f04565d23b4dde56b6c647c22b061dd7df7b323b4bd295303d841998c9d0d0f289ef1469db65ef28bc86348acf83e5ce
