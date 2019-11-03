@@ -1,4 +1,5 @@
 ---
+elasticsearch_platform: '{{ elasticsearch_os}}-{{ elasticsearch_arch }}'
 elasticsearch_name: elasticsearch-{{ elasticsearch_ver }}
 elasticsearch_tgz: '{{ elasticsearch_name }}-{{ elasticsearch_platform }}.tar.gz'
 

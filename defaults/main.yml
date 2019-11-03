@@ -1,7 +1,11 @@
 ---
 # defaults file for elasticsearch
-elasticsearch_ver: '7.3.0'
-elasticsearch_platform: linux-x86_64
+elasticsearch_ver: '7.4.2'
+elasticsearch_os: linux
+elasticsearch_arch: x86_64
+
+elasticsearch_mirror: https://artifacts.elastic.co/downloads/elasticsearch
+elasticsearch_parent_install_dir: /usr/local
 
 elasticsearch_checksums:
   # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-linux-x86_64.tar.gz.sha512
@@ -14,6 +18,9 @@ elasticsearch_checksums:
   '7.2.0': sha512:9f11386334c9344cb92206c367652ca36cb2161e0a301b1b011c5c168c7c9670e6f59f29521232f1c18388e47e80db0a16fb1daa049c263470cf2f059f3d8a8e
   # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.3.0-linux-x86_64.tar.gz.sha512
   '7.3.0': sha512:1e45bf29b344f96f4adbfcaa2dba35e46eb1a5e6564f94ed3641835d6ed62fdaee039c627a04b0b6156ff88b885e7257b6e5595b3ecad21021da491e9bdb00a6
-
-elasticsearch_mirror: https://artifacts.elastic.co/downloads/elasticsearch
-elasticsearch_parent_install_dir: /usr/local
+  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.0-linux-x86_64.tar.gz.sha512
+  '7.4.0': sha512:bfd96df61f8b745dce2e665dfe326f021ffdf080853aa02ca7d4bc2f5e40b949fe566fe6aacc628580b8ca421866b86eeb2f694b14b08f47ebb9e1350d18ecc3
+  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.1-linux-x86_64.tar.gz.sha512
+  '7.4.1': sha512:605799480aec3a10a4a88d30633e29e1945f47c3e16f70f27de01291258dc360380c475d64249a46269804a61249f8c35602e523ea2734575a605c9e13db095f
+  # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.2-linux-x86_64.tar.gz.sha512
+  '7.4.2': sha512:64cc3e77f4271a5477c8c979fa48728d96890cad68b0daac6566f4dda25b4d4a80784eaafeaa874a6b434c034fcacb8a5751fdb445919191bae4aa4958c793b7
