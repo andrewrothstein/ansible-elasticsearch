@@ -10,7 +10,7 @@ dl() {
     arch=$3
     archive_type=$4
     local platform="${os}-${arch}"
-    local url=https://artifacts.elastic.co/downloads/${APP}/${APP}-${ver}-${platform}.${archive_type}.sha512
+    local url=${MIRROR}/${APP}-${ver}-${platform}.${archive_type}.sha512
     printf "    # %s\n" $url
     printf "    '%s': sha512:%s\n" $platform $(curl -sSL $url | awk '{print $1}')
 }
@@ -23,4 +23,4 @@ dl_ver() {
     dl $ver windows x86_64 zip
 }
 
-dl_ver ${1:-7.4.2}
+dl_ver ${1:-7.9.3}
