@@ -3,7 +3,7 @@
   roles:
     - role: '{{ playbook_dir }}'
   tasks:
-    - command: /usr/local/elasticsearch/bin/elasticsearch --version
+    - command: bash -lc '/usr/local/elasticsearch/bin/elasticsearch --version'
       register: elasticsearch_test_output
     - debug:
         msg: '{{ elasticsearch_test_output.stdout }}'
