@@ -1,52 +1,55 @@
 ---
-- name: check for elasticsearch installation in {{ elasticsearch_install_dir }}
-  become: yes
-  stat:
+- name: Checking for installation at {{ elasticsearch_install_dir }}
+  become: true
+  ansible.builtin.stat:
     path: '{{ elasticsearch_install_dir }}'
   changed_when: false
   register: elasticsearch_binary_dir
-- when: not elasticsearch_binary_dir.stat.exists
+- name: Downloading and installing...
+  when: not elasticsearch_binary_dir.stat.exists
   block:
-    - name: downloading {{ elasticsearch_archive_url }} to {{ elasticsearch_tmp_archive }}
+    - name: Downloading {{ elasticsearch_archive_url }} to {{ elasticsearch_tmp_archive }}
       become: '{{ elasticsearch_privilege_escalate | default(True) }}'
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ elasticsearch_archive_url }}'
         dest: '{{ elasticsearch_tmp_archive }}'
         checksum: '{{ elasticsearch_checksum }}'
-        mode: 0644
-
-    - name: unarchiving {{ elasticsearch_tmp_archive }} to {{ elasticsearch_parent_install_dir }}
+        mode: '644'
+    - name: Installing andrewrothstein.unarchivedeps
+      ansible.builtin.include_role:
+        name: andrewrothstein.unarchivedeps
+    - name: Unarchiving {{ elasticsearch_tmp_archive }} to {{ elasticsearch_parent_install_dir }}
       become: '{{ elasticsearch_privilege_escalate | default(True) }}'
       become_user: root
-      unarchive:
-        remote_src: yes
+      ansible.builtin.unarchive:
+        remote_src: true
         src: '{{ elasticsearch_tmp_archive }}'
         dest: '{{ elasticsearch_parent_install_dir }}'
         creates: '{{ elasticsearch_install_dir }}'
   always:
-    - name: cleanup {{ elasticsearch_tmp_archive }}
+    - name: Cleanup {{ elasticsearch_tmp_archive }}
       become: '{{ elasticsearch_privilege_escalate | default(True) }}'
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ elasticsearch_tmp_archive }}'
         state: absent
 
-- name: linking {{ elasticsearch_link_dir }} to {{ elasticsearch_install_dir }}
+- name: Linking {{ elasticsearch_link_dir }} to {{ elasticsearch_install_dir }}
   become: '{{ elasticsearch_privilege_escalate | default(True) }}'
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ elasticsearch_install_dir }}'
     dest: '{{ elasticsearch_link_dir }}'
     state: link
 
-- name: add to search path...
+- name: Add to search path...
   become: '{{ elasticsearch_privilege_escalate | default(True) }}'
   become_user: root
   with_items:
     - f: elasticsearch.sh
       d: /etc/profile.d
-  template:
+  ansible.builtin.template:
     src: '{{ item.f }}.j2'
     dest: '{{ item.d }}/{{ item.f }}'
-    mode: '{{ item.m|default("0644") }}'
+    mode: '{{ item.m | default("0644") }}'

@@ -1,6 +1,14 @@
 ---
-- name: resolve platform specific vars
-  include_vars: "{{ item }}"
+- name: Installing andrewrothstein.bash
+  ansible.builtin.include_role:
+    name: andrewrothstein.bash
+- name: Installing andrewrothstein.temurin
+  ansible.builtin.include_role:
+    name: andrewrothstein.temurin
+  vars:
+    temurin_app: jre
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
     - files:
         - "{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml"
@@ -10,4 +18,5 @@
       paths:
         - '{{ role_path }}/vars'
 
-- include_tasks: '{{ elasticsearch_installer|default("tgz") }}.yml'
+- name: Installing....
+  ansible.builtin.include_tasks: '{{ elasticsearch_installer | default("tgz") }}.yml'

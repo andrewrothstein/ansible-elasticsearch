@@ -1,8 +1,10 @@
 ---
-elasticsearch_platform: '{{ elasticsearch_os}}-{{ elasticsearch_arch }}'
+elasticsearch_os: '{{ ansible_system | lower }}'
+elasticsearch_arch: '{{ ansible_architecture }}'
+elasticsearch_platform: '{{ elasticsearch_os }}-{{ elasticsearch_arch }}'
 elasticsearch_name: elasticsearch-{{ elasticsearch_ver }}
 elasticsearch_archive: '{{ elasticsearch_name }}-{{ elasticsearch_platform }}.{{ elasticsearch_archive_type | default("tar.gz") }}'
-elasticsearch_tmp_archive: /tmp/{{ elasticsearch_archive }}
+elasticsearch_tmp_archive: '{{ elasticsearch_tmp_dir | default("/tmp") }}/{{ elasticsearch_archive }}'
 
 elasticsearch_archive_url: '{{ elasticsearch_mirror }}/{{ elasticsearch_archive }}'
 elasticsearch_checksum: '{{ elasticsearch_checksums[elasticsearch_ver][elasticsearch_platform] }}'

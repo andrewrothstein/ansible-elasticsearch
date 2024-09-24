@@ -1,4 +1,4 @@
 ---
 elasticsearch_installer: pkg
-elasticsearch_privilege_escalate: False
+elasticsearch_privilege_escalate: false
 elasticsearch_os: darwin

@@ -1,9 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.elasticsearch
+  hosts: all
   roles:
     - role: '{{ playbook_dir }}'
   tasks:
-    - command: bash -lc '/usr/local/elasticsearch/bin/elasticsearch --version'
+    - name: Executing 'elasticsearch --version'
+      ansible.builtin.command: sh -lc 'elasticsearch --version'
       register: elasticsearch_test_output
-    - debug:
+      changed_when: false
+    - name: Output from 'elasticsearch --version'
+      ansible.builtin.debug:
         msg: '{{ elasticsearch_test_output.stdout }}'
