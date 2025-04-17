@@ -1,6 +1,6 @@
 ---
 # defaults file for elasticsearch
-elasticsearch_ver: 8.15.1
+elasticsearch_ver: 8.18.0
 
 elasticsearch_mirror: https://artifacts.elastic.co/downloads/elasticsearch
 elasticsearch_parent_install_dir: /usr/local
@@ -153,3 +153,10 @@ elasticsearch_checksums:
     'darwin-x86_64': sha512:33fd14c20163152a3c4cc7effa4ee5a4f3940a0994c8e2452aed6179297d6fe8d5993755244ab4fdb9f39a5780116e8923fee376b4608dc7f3f623c72c0867a6
     # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.15.1-windows-x86_64.zip.sha512
     'windows-x86_64': sha512:2760bdafc454249eb51c3f67c76ff19a9a65f4f6c7fba9c62c85e8903f3c2775945742b411de9bf412879d67f24c353584d1293f11b9590158430cf00836f76b
+  '8.18.0':
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.18.0-linux-x86_64.tar.gz.sha512
+    'linux-x86_64': sha512:ac3a17ab28450bcf1a9686f7e59913343c0a8c9079df6898e7691d420b981ac71ffd24bb05a1da795af4aa5678c3db45fc1da7801f8db53399af7fb579d77923
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.18.0-darwin-x86_64.tar.gz.sha512
+    'darwin-x86_64': sha512:2cfb24d4e8f74e0c6b48d4f28f1e9f49b2e48203297123d7d565fa2cf1fe4f71179bc700ee0dd2329563b915463723c10d0e5faa05ce0fb14e1a6dc49c6a2b05
+    # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.18.0-windows-x86_64.zip.sha512
+    'windows-x86_64': sha512:a837bece3b26f221a7a97cacd899874ba6d7fcda47df910cf2e0518c5fdfd340fcd6192b5bfd775ecdc21401770099eaad1a4966838a09d87e3343cf25a72f82
